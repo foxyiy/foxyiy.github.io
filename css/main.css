@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "SimSun", Verdana, sans-serif;
   font-size: 14px;
   line-height: 2;
   color: #555;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: Georgia, sans;
 }
 h2,
 h3,
@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cd4905;
+  background: #b5fc86;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2743,8 +2743,8 @@ pre .javascript .function {
 }
 .site-meta {
   padding: 20px 0;
-  color: #fff;
-  background: #222;
+  color: #00f;
+  background: #bbb;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -2761,7 +2761,7 @@ pre .javascript .function {
   background: none;
 }
 .brand:hover {
-  color: #fff;
+  color: #000;
 }
 .site-subtitle {
   margin: 10px 10px 0;
@@ -2875,7 +2875,7 @@ pre .javascript .function {
   color: #555;
 }
 .sidebar a:hover {
-  color: #222;
+  color: $black_deep;
 }
 .site-state-item {
   padding: 0 10px;
