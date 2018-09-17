@@ -1859,7 +1859,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #94db22;
+  background: #ffff5c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2803,7 +2803,7 @@ pre .javascript .function {
 .site-meta {
   padding: 20px 0;
   color: #00f;
-  background: #bbb;
+  background: #ff2a2a;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -2859,8 +2859,8 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
-  background: #f9f9f9;
-  border-bottom-color: #fff;
+  background: #bbb;
+  border-bottom-color: #2f4f4f;
 }
 .menu .menu-item br {
   display: none;
@@ -2874,7 +2874,7 @@ pre .javascript .function {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #bbb;
+  background-color: #fe6e25;
 }
 .btn-bar {
   background-color: #fff;
