@@ -1859,7 +1859,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff5c;
+  background: #db1418;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2648,6 +2648,7 @@ pre .javascript .function {
 .header {
   position: relative;
   margin: 0 auto;
+  background: #fff;
   width: 75%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2803,7 +2804,7 @@ pre .javascript .function {
 .site-meta {
   padding: 20px 0;
   color: #00f;
-  background: #ff2a2a;
+  background: #cd3700;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -3179,4 +3180,8 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background: url("/images/2.jpg") no-repeat;
+  background-attachment: fixed;
 }
