@@ -126,7 +126,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="指令系统,单片机," />
 
 
 
@@ -137,16 +137,18 @@
 
 
 
-<meta name="description" content="没有人天生平凡">
-<meta property="og:type" content="website">
-<meta property="og:title" content="foxyi">
-<meta property="og:url" content="http://foxyi.club/archives/index.html">
+<meta name="description" content="数据传输类指令(29条)">
+<meta name="keywords" content="指令系统,单片机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据传输类指令">
+<meta property="og:url" content="http://foxyi.club/2018/09/24/数据传输类指令/index.html">
 <meta property="og:site_name" content="foxyi">
-<meta property="og:description" content="没有人天生平凡">
+<meta property="og:description" content="数据传输类指令(29条)">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-24T03:30:07.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="foxyi">
-<meta name="twitter:description" content="没有人天生平凡">
+<meta name="twitter:title" content="数据传输类指令">
+<meta name="twitter:description" content="数据传输类指令(29条)">
 
 
 
@@ -176,11 +178,11 @@
 
 
 
-  <link rel="canonical" href="http://foxyi.club/archives/"/>
+  <link rel="canonical" href="http://foxyi.club/2018/09/24/数据传输类指令/"/>
 
 
 
-  <title>归档 | foxyi</title>
+  <title>数据传输类指令 | foxyi</title>
   
 
 
@@ -199,7 +201,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -327,148 +329,253 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://foxyi.club/2018/09/24/数据传输类指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="foxyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="foxyi">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">数据传输类指令</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T11:25:55+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/24/数据传输类指令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/24/数据传输类指令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2><span id="数据传输类指令29条"><center><font color="red"> 数据传输类指令(29条)</font></center></span></h2>
+<a id="more"></a>
+<p><font size="6">数据传输类指令包括5种，分别是内部RAM单元之间的传输类指令，读取ROM中常数表项指令 MOVC,读取片外RAM和接口单元数据的指令  MOVX,堆栈操作类指令  PUSH和POP,数据交换指令   XCH 、  XCHD、 SWAP</font></p>
+## 1.内部RAM单元之间的传输类指令
+（1）	以累加器A为目的操作数的传送指令
+（2）	以工作寄存器Rn（n=0~7）为目的操作数的传送指令
+（3）	以间接寄存器为目的操作数的传送指令
+（4）	以直接地址为目的操作数的传送指令
+例：分别用三种方法将内部RAM中30H单元的内容送到40H单元。
+1)	直接将30单元的内容传送到40H单元。
+MOV 40H，30H            ；（40H）=（30H）
+2)	用间接寄存器指向源地址。
+MOV R0，#30H            ；（R0）=30H
+MOV 40H，@R0           ；（40H）=（（R0））=（30H）
+3)	用间接寄存器指向目标地址。
+MOV R0，#40H            ；（R0）=40H
+MOV @R0，30H           ；（40H）=（30H）
+（5）	  以DPTR为目的操作数的传送指令
+MOV DPTR，#data16            ；DPTR=data16
+这是整个指令系统中仅有的一条16位数据传送指令，16位寄存器DPTR由DPH和DPL组成。结果是把高8位立即送入DPH，            低8位立即数送入DPL。
+##2.读写片外RAM及接口单元的数据传输指令
+<font color="red" size="4"> 外部数据存储器与内部数据存储器的数据传送只能通过累加器A进行，且只能采用间接寻址方式。</font>
+（1）	读外部数据存储器或外部I/O口的指令
+MOVX A,@Ri                  ;A←((Ri))
+MOVX A,@DPTR               ;A←((DPTR))
+（2）	写外部数据存储器或外部I/O口的指令
+MOVX @Ri,A                  ;(Ri) ←(a)
+MOVX @DPTR,A               ;(DPTR) ←(A)
+这组指令的功能是访问外部RAM，<font color="red">源操作数采用寄存器间接寻址或寄存器寻址</font>
+##3.栈操作指令
+在80C51内部RAM区可以设定一个先进后出的区域作为一个栈（栈：栈是允许在同一端进行插入和删除操作的特殊线性表除了第一个和第二个数据以外都是首尾相连的数据结构），在特殊功能寄存器中有一个堆栈指针SP（指针：在信息工程中指针是一个用来指示一个内存地址的计算机语言的变量或中央处理器(CPU)中寄存器，在使用一个指针时，一个程序既可以直接使用这个指针所储存的内存地址，又可以使用这个地址里储存的变量或函数的值。），它始终指向栈顶位置。引入堆栈的目的，就是在程序调用或中断时保护和恢复现场数据及断点地址。
+分为：进栈指令（PUSH），出栈指令（POP）。
+1、	进栈指令
+PUSH direct                             ；SP←（SP）+1（先变指针），（SP）←（direct）（再压栈）
+2、	出栈指令
+POP direct                              ；direct←（（SP））（先出栈），SP←（SP）-1（再变指针）
+<p>##3.数据交换指令<br>
+数据交换主要在内部RAM和累加器A之间进行，有整字节和半字节两种交换指令。<br>
+（1）	整字节交换指令<br>
+XCH A,Rn                ;(A)   (Rn)<br>
+XCH A,direct             ;(A)  ( direct)<br>
+XCH A,@Ri               ;(A)   ((Ri))<br>
+这组指令的功能是将累加器A的内容与源操作数所指定的数据进行交换。<br>
+（2）	低半字节交换指令<br>
+XCHD A,@Ri              ;(A.3~A.0)  ((Ri.3~Ri.0))<br>
+这条指令的功能是将累加器A的低半字节（D3<sub>D0）与由@Ri指定的内部RAM单元的低半字节（D3</sub>D0）交换，高半字节（D7~D4）保持不变。<br>
+(3)	高、低半字节互换指令<br>
+SWAP A                  ; (A.3~A.0)  (A.7~A.4)<br>
+这条指令的功能是将累加器A的高半字节（D7<sub>D4）和低半字节（D3</sub>D0）交换。<br>
+例：假设（A）=12H，（R0）=34H，内部RAM（34H）=56H，分析每条指令的执行结果。<br>
+解：将每条指令的执行结果写在注释部分：<br>
+XCH A,@R0                     ;(A)=((R0))=(34H)=56H,(34H)=(A)=12H<br>
+XCHD A,@R0                    ;(A)=16H,(34H)=52H<br>
+SWAP A                        ;(A)=21H<br>
+#5.累加器A与ROM的数据传送指令（查表指令）<br>
+（1）  基址寄存器为PC的查表指令<br>
+MOVC A,@A+PC                  ;A←((A)+(PC))<br>
+（2）  基址寄存器为DPTR的查表指令<br>
+MOVC A,@A+DPTR                ;A←((A)+(DPTR))<br>
+例：若（DPTR）=3000H，（A）=20H，执行指令MOVC A，@A+DPTR后，程序存储器3020H单元的内容送入A。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/指令系统/" rel="tag"># 指令系统</a>
+          
+            <a href="/tags/单片机/" rel="tag"># 单片机</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true">分享</i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/24/数据传输类指令/" itemprop="url">
-              
-                <span itemprop="name">数据传输类指令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-24T11:25:55+08:00"
-              content="2018-09-24" >
-          09-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/22/80c51的寻址方式/" rel="next" title="80c51的寻址方式">
+                <i class="fa fa-chevron-left"></i> 80c51的寻址方式
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/22/80c51的寻址方式/" itemprop="url">
-              
-                <span itemprop="name">80c51的寻址方式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-22T01:49:26+08:00"
-              content="2018-09-22" >
-          09-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/14/English/" itemprop="url">
-              
-                <span itemprop="name">Markdown</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-14T19:05:25+08:00"
-              content="2018-09-14" >
-          09-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-    </div>
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+    <!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-button -mob-share-open">分享</div>
+<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-theme-slide-right" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey="></script>
+
+<!--MOB SHARE END-->
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -476,6 +583,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -495,8 +609,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -561,6 +684,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text"> 数据传输类指令(29条)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -708,6 +847,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

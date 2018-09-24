@@ -145,7 +145,7 @@
 <meta property="og:site_name" content="foxyi">
 <meta property="og:description" content="80c51的寻址方式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T05:07:02.361Z">
+<meta property="og:updated_time" content="2018-09-24T03:25:22.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="80c51的寻址方式">
 <meta name="twitter:description" content="80c51的寻址方式">
@@ -459,7 +459,7 @@
 <li>寄存器B</li>
 <li>数据指针DPTR</li>
 </ul>
-<h3><span id="2直接寻址"> <font color="#FF6600">2…直接寻址</font></span></h3>
+<h3><span id="2直接寻址"> <font color="#FF6600">2.直接寻址</font></span></h3>
 <p>直接寻址有两类，</p>
 <blockquote>
 <ul>
@@ -503,6 +503,14 @@
 <li>位地址所对应的空间为：片内RAM,20H-2FH单元中的可寻址位，</li>
 <li>SFR空间可寻址位，其常用符号位地址表示，如”CLR   ACC.0“,该指令的功能是将累加器的第0位置零。</li>
 </ul>
+<h2><span id="7种寻址方式所对应的地址空间"> 7种寻址方式所对应的地址空间</span></h2>
+<p>① 立即寻址：立即数<br>
+② 直接寻址：片内RAM低128字节或特殊功能寄存器。<br>
+③ 寄存器寻址：工作寄存器R0~R7、A、AB、DPTR。<br>
+④ 寄存器间接寻址：片内RAM和片外数据空间。<br>
+⑤ 变址寻址：程序空间。<br>
+⑥ 相对寻址：程序空间。<br>
+⑦ 位寻址：片内RAM（20H~2FH）位寻址空间和可位寻址的特殊功能寄存器位地址C。</p>
 
       
     </div>
@@ -559,6 +567,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/24/数据传输类指令/" rel="prev" title="数据传输类指令">
+                数据传输类指令 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -661,7 +673,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -717,7 +729,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">  80c51的寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text"> 寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text"> 1.寄存器寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text"> 2…直接寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text"> 3.寄存器间接寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text"> 4.立即寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text"> 5.变址寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.</span> <span class="nav-text"> 6.相对寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.8.</span> <span class="nav-text"> 7.位寻址</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">  80c51的寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text"> 寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text"> 1.寄存器寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text"> 2.直接寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text"> 3.寄存器间接寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text"> 4.立即寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text"> 5.变址寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.</span> <span class="nav-text"> 6.相对寻址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.8.</span> <span class="nav-text"> 7.位寻址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text"> 7种寻址方式所对应的地址空间</span></a></li></ol></div>
             
 
           </div>
