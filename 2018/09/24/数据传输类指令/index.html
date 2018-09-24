@@ -145,7 +145,7 @@
 <meta property="og:site_name" content="foxyi">
 <meta property="og:description" content="数据传输类指令(29条)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T03:30:07.320Z">
+<meta property="og:updated_time" content="2018-09-24T04:05:22.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据传输类指令">
 <meta name="twitter:description" content="数据传输类指令(29条)">
@@ -422,42 +422,43 @@
       
         <h2><span id="数据传输类指令29条"><center><font color="red"> 数据传输类指令(29条)</font></center></span></h2>
 <a id="more"></a>
-<p><font size="6">数据传输类指令包括5种，分别是内部RAM单元之间的传输类指令，读取ROM中常数表项指令 MOVC,读取片外RAM和接口单元数据的指令  MOVX,堆栈操作类指令  PUSH和POP,数据交换指令   XCH 、  XCHD、 SWAP</font></p>
-## 1.内部RAM单元之间的传输类指令
-（1）	以累加器A为目的操作数的传送指令
-（2）	以工作寄存器Rn（n=0~7）为目的操作数的传送指令
-（3）	以间接寄存器为目的操作数的传送指令
-（4）	以直接地址为目的操作数的传送指令
-例：分别用三种方法将内部RAM中30H单元的内容送到40H单元。
-1)	直接将30单元的内容传送到40H单元。
-MOV 40H，30H            ；（40H）=（30H）
-2)	用间接寄存器指向源地址。
-MOV R0，#30H            ；（R0）=30H
-MOV 40H，@R0           ；（40H）=（（R0））=（30H）
-3)	用间接寄存器指向目标地址。
-MOV R0，#40H            ；（R0）=40H
-MOV @R0，30H           ；（40H）=（30H）
-（5）	  以DPTR为目的操作数的传送指令
-MOV DPTR，#data16            ；DPTR=data16
-这是整个指令系统中仅有的一条16位数据传送指令，16位寄存器DPTR由DPH和DPL组成。结果是把高8位立即送入DPH，            低8位立即数送入DPL。
-##2.读写片外RAM及接口单元的数据传输指令
-<font color="red" size="4"> 外部数据存储器与内部数据存储器的数据传送只能通过累加器A进行，且只能采用间接寻址方式。</font>
-（1）	读外部数据存储器或外部I/O口的指令
-MOVX A,@Ri                  ;A←((Ri))
-MOVX A,@DPTR               ;A←((DPTR))
-（2）	写外部数据存储器或外部I/O口的指令
-MOVX @Ri,A                  ;(Ri) ←(a)
-MOVX @DPTR,A               ;(DPTR) ←(A)
-这组指令的功能是访问外部RAM，<font color="red">源操作数采用寄存器间接寻址或寄存器寻址</font>
-##3.栈操作指令
-在80C51内部RAM区可以设定一个先进后出的区域作为一个栈（栈：栈是允许在同一端进行插入和删除操作的特殊线性表除了第一个和第二个数据以外都是首尾相连的数据结构），在特殊功能寄存器中有一个堆栈指针SP（指针：在信息工程中指针是一个用来指示一个内存地址的计算机语言的变量或中央处理器(CPU)中寄存器，在使用一个指针时，一个程序既可以直接使用这个指针所储存的内存地址，又可以使用这个地址里储存的变量或函数的值。），它始终指向栈顶位置。引入堆栈的目的，就是在程序调用或中断时保护和恢复现场数据及断点地址。
+<p><font size="4">数据传输类指令包括5种，分别是内部RAM单元之间的传输类指令，读取ROM中常数表项指令 MOVC,读取片外RAM和接口单元数据的指令  MOVX,堆栈操作类指令  PUSH和POP,数据交换指令   XCH 、  XCHD、 SWAP</font></p>
+<h2><span id="1内部ram单元之间的传输类指令"> 1.内部RAM单元之间的传输类指令</span></h2>
+<p>（1）以累加器A为目的操作数的传送指令
+</p><p>（2）以工作寄存器Rn（n=0~7）为目的操作数的传送指令
+</p><p>（3）以间接寄存器为目的操作数的传送指令
+</p><p>（4）以直接地址为目的操作数的传送指令
+</p><p>例：分别用三种方法将内部RAM中30H单元的内容送到40H单元。<br>
+1)	直接将30单元的内容传送到40H单元。<br>
+MOV 40H，30H            ；（40H）=（30H）<br>
+2)	用间接寄存器指向源地址。<br>
+MOV R0，#30H            ；（R0）=30H<br>
+MOV 40H，@R0           ；（40H）=（（R0））=（30H）<br>
+3)	用间接寄存器指向目标地址。<br>
+MOV R0，#40H            ；（R0）=40H<br>
+MOV @R0，30H           ；（40H）=（30H）<br>
+5）	  以DPTR为目的操作数的传送指令<br>
+MOV DPTR，#data16            ；DPTR=data16<br>
+这是整个指令系统中仅有的一条16位数据传送指令，16位寄存器DPTR由DPH和DPL组成。结果是把高8位立即送入DPH，            低8位立即数送入DPL。<br>
+</p><h2><span id="2读写片外ram及接口单元的数据传输指令"> 2.读写片外RAM及接口单元的数据传输指令</span></h2>
+<font color="red" size="4"> 外部数据存储器与内部数据存储器的数据传送只能通过累加器A进行，且只能采用间接寻址方式。</font><br>
+（1）	读外部数据存储器或外部I/O口的指令<br>
+MOVX A,@Ri                  ;A←((Ri))<br>
+MOVX A,@DPTR               ;A←((DPTR))<br>
+（2）	写外部数据存储器或外部I/O口的指令<br>
+MOVX @Ri,A                  ;(Ri) ←(a)<br>
+MOVX @DPTR,A               ;(DPTR) ←(A)<br>
+这组指令的功能是访问外部RAM，<font color="red">源操作数采用寄存器间接寻址或寄存器寻址</font>  
+<h2><span id="3栈操作指令"> 3.栈操作指令</span></h2>
+<p>在80C51内部RAM区可以设定一个先进后出的区域作为一个栈（栈：栈是允许在同一端进行插入和删除操作的特殊线性表除了第一个和第二个数据以外都是首尾相连的数据结构），在特殊功能寄存器中有一个堆栈指针SP（指针：在信息工程中指针是一个用来指示一个内存地址的计算机语言的变量或中央处理器(CPU)中寄存器，在使用一个指针时，一个程序既可以直接使用这个指针所储存的内存地址，又可以使用这个地址里储存的变量或函数的值。），它始终指向栈顶位置。引入堆栈的目的，就是在程序调用或中断时保护和恢复现场数据及断点地址。
 分为：进栈指令（PUSH），出栈指令（POP）。
-1、	进栈指令
-PUSH direct                             ；SP←（SP）+1（先变指针），（SP）←（direct）（再压栈）
-2、	出栈指令
-POP direct                              ；direct←（（SP））（先出栈），SP←（SP）-1（再变指针）
-<p>##3.数据交换指令<br>
-数据交换主要在内部RAM和累加器A之间进行，有整字节和半字节两种交换指令。<br>
+</p>
+1、进栈指令<br>
+PUSH direct ；SP←（SP）+1（先变指针），（SP）←（direct）（再压栈）<br>
+2、出栈指令<br>
+POP direct  ；direct←（（SP））（先出栈），SP←（SP）-1（再变指针）
+<h2><span id="4数据交换指令"> 4.数据交换指令</span></h2>
+<p>数据交换主要在内部RAM和累加器A之间进行，有整字节和半字节两种交换指令。<br>
 （1）	整字节交换指令<br>
 XCH A,Rn                ;(A)   (Rn)<br>
 XCH A,direct             ;(A)  ( direct)<br>
@@ -473,9 +474,9 @@ SWAP A                  ; (A.3~A.0)  (A.7~A.4)<br>
 解：将每条指令的执行结果写在注释部分：<br>
 XCH A,@R0                     ;(A)=((R0))=(34H)=56H,(34H)=(A)=12H<br>
 XCHD A,@R0                    ;(A)=16H,(34H)=52H<br>
-SWAP A                        ;(A)=21H<br>
-#5.累加器A与ROM的数据传送指令（查表指令）<br>
-（1）  基址寄存器为PC的查表指令<br>
+SWAP A                        ;(A)=21H</p>
+<h2><span id="5累加器a与rom的数据传送指令查表指令"> 5.累加器A与ROM的数据传送指令（查表指令）</span></h2>
+<p>（1）  基址寄存器为PC的查表指令<br>
 MOVC A,@A+PC                  ;A←((A)+(PC))<br>
 （2）  基址寄存器为DPTR的查表指令<br>
 MOVC A,@A+DPTR                ;A←((A)+(DPTR))<br>
@@ -694,7 +695,7 @@ MOVC A,@A+DPTR                ;A←((A)+(DPTR))<br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text"> 数据传输类指令(29条)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text"> 数据传输类指令(29条)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text"> 1.内部RAM单元之间的传输类指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text"> 2.读写片外RAM及接口单元的数据传输指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text"> 3.栈操作指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text"> 4.数据交换指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text"> 5.累加器A与ROM的数据传送指令（查表指令）</span></a></li></ol></div>
             
 
           </div>
