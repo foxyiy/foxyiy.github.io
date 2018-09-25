@@ -133,16 +133,7 @@
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<center><font size="12" color="red">请注意</font></center><br><center><font size="4" color="red">我不生产文章，我只是文章的搬运工</font></center>]]></content>
-      
-    </entry>
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<center><font size="24" color="red">我不生产文章，我只是文章的搬运工</font></center>]]></content>
       
     </entry>
     
@@ -150,6 +141,15 @@
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
