@@ -3,6 +3,50 @@
   
     
     <entry>
+      <title>位操作指令</title>
+      <link href="/2018/09/25/%E4%BD%8D%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/"/>
+      <url>/2018/09/25/%E4%BD%8D%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="center位操作指令center"><a class="markdownIt-Anchor" href="#center位操作指令center"></a> <center>位操作指令</center></h1><a id="more"></a><h3 id="位操作类指令"><a class="markdownIt-Anchor" href="#位操作类指令"></a> 位操作类指令</h3><p>位操作又称为布尔操作，是以位为单位进行的各种操作。在布尔处理机中，借用进位标志Cy来存放逻辑运算结果，大部分操作都涉及Cy，因此它相当于布尔处理机的“累加器”，称为位累加器，用符号C表示。</p><h4 id="1位传送指令"><a class="markdownIt-Anchor" href="#1位传送指令"></a> （1）位传送指令</h4><pre><code>MOV C,bit                  ;Cy←（bit）MOV bit,C                  ;bit←（Cy）这组指令其中的一个操作数必须是进位标志C，另一个可以使位地址（用bit表示）。</code></pre><h4 id="2位置位和位清零指令"><a class="markdownIt-Anchor" href="#2位置位和位清零指令"></a> （2）位置位和位清零指令</h4><pre><code>SETB C                     ;Cy←1SETB bit                    ;biT←1这两条指令可以实现地址单元与位累加器的置位。CLR C                      ; Cy←0CLR bit                     ; biT←0这两组指令可以实现地址单元与位累加器的清零。</code></pre><h4 id="3位逻辑运算指令"><a class="markdownIt-Anchor" href="#3位逻辑运算指令"></a> （3）位逻辑运算指令</h4><p>① 位逻辑“与”指令<br>ANL C,bit                 ;CY←(CY)∧（bit）<br>ANL C,/bit                ; CY←(CY)∧（bit）取反<br>这两条指令是将CY标志位中的内容与位地址单元的内容或其内容的反码进行逻辑与操作，并将相与的结果再送入到CY的标志位中。<br>② 位逻辑“或”指令<br>ORL C,bit                 ;CY←(CY)∨（bit）<br>ORL C,/bit                ; CY←(CY) ∨（bit）取反<br>这两条指令是将CY标志位中的内容与直接位地址的内容或其内容的反码进行逻辑与操作，并将相与的结果再送入到CY的标志位中。、<br>③ 位逻辑“非”指令<br>CPL C                    ;CY (CY)取反<br>CPL bit                   ;bit←(bit)取反</p><h4 id="4位条件转移指令"><a class="markdownIt-Anchor" href="#4位条件转移指令"></a> （4）位条件转移指令←</h4><p>类比于JZ/JNZ<br>① 位累加器Cy状态判断转移指令<br>JC rel                     ;若（Cy）=1，转移<br>JNC rel                    ；若（Cy）=0，转移<br>② 位状态判断转移指令<br>JNB bit,rel                   ;若（bit）=0，转移<br>JBC bit,rel                   ;若（bit）=1，转移，且bit←<br>JB bit,rel                    ; 若（bit）=1，转移<br>其中JBC指令除了判断位地址的内容外，还将被测位清零。</p><h3 id="单片机指令集"><a class="markdownIt-Anchor" href="#单片机指令集"></a> 单片机指令集</h3><iframe src="http://www.go-gddq.com/down/2011-07/11071400206467.pdf" width="900" height="1000/"></iframe>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 指令系统 </tag>
+            
+            <tag> 单片机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>控制转移类指令</title>
+      <link href="/2018/09/25/%E6%8E%A7%E5%88%B6%E8%BD%AC%E7%A7%BB%E7%B1%BB%E6%8C%87%E4%BB%A4/"/>
+      <url>/2018/09/25/%E6%8E%A7%E5%88%B6%E8%BD%AC%E7%A7%BB%E7%B1%BB%E6%8C%87%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="center控制转移类指令center"><a class="markdownIt-Anchor" href="#center控制转移类指令center"></a> <center>控制转移类指令</center></h2><a id="more"></a><h3 id="1-无条件转移指令"><a class="markdownIt-Anchor" href="#1-无条件转移指令"></a> 1、无条件转移指令</h3><h4 id="1-长转移指令long-jump"><a class="markdownIt-Anchor" href="#1-长转移指令long-jump"></a> （1）  长转移指令(long jump)</h4><pre><code>   LJMP addr16                      ;PC←addr16   指令执行时把16位目标地址直接送给PC，实现程序转移。此指令可覆盖整个程序存储空间。</code></pre><h4 id="2-短转移指令short-jump"><a class="markdownIt-Anchor" href="#2-短转移指令short-jump"></a> （2）  短转移指令(short jump)</h4><pre><code>   AJMP addr11                      ; PC←(PC)+2,    ←addr11,   不变</code></pre><p>指令执行时，PC（加2修改后的值）的高5位与指令中的11位地址拼接在一起，共同形成16位的目标地址，从而达到在现 行地址所在2KB的范围内转移。</p><h4 id="3-相对转移指令"><a class="markdownIt-Anchor" href="#3-相对转移指令"></a> （3）  相对转移指令</h4><pre><code>    SJMP rel                          ; PC←(PC)+2,PC←(PC)+rel    该指令的功能是根据指令中给出的相对偏移量rel计算出程序将要转移的目标地址：                       目标地址=源地址（本指令所在地址）+2+rel</code></pre><h4 id="4-间接转移指令"><a class="markdownIt-Anchor" href="#4-间接转移指令"></a> （4）  间接转移指令</h4><pre><code>   JMP @A+DPTR                      ;PC←(A)+(DPTR)</code></pre><p>这条指令的功能是把累加器中的8位无符号数与数据指针DPTR的16位数相加，结果作为目标地址，指令执行后不改变A和DPTR的内容，也不影响标志位。该指令可根据A的内容进行跳转，而A的内容又可随意改变，故可形成程序分支。本指令跳转范围64KB。</p><p>例：设某单片机系统的键盘扫描程序所得键值存放在R2中，试编写程序，当R2为0、1、2时，能够使程序分别转向去执行与按键对应的功能。<br>解：<br>MOV A,R2                        ;取控制变量<br>RL A                             ;对A乘2修正，因为AJMP为2B指令<br>MOV DPTR,#TABLE<br>JMP @A+DPTR<br>TABLE: AJMP ROUT0<br>AJMP ROUT1<br>AJMP ROUT2</p><h3 id="2-条件转移指令"><a class="markdownIt-Anchor" href="#2-条件转移指令"></a> 2、条件转移指令</h3><h4 id="1-累加器判零转移指令"><a class="markdownIt-Anchor" href="#1-累加器判零转移指令"></a> （1）  累加器判零转移指令</h4><pre><code>   JZ rel             ;若（A）=0，转移；否则顺序执行本指令的下一条指令（jump if zero）   JNZ rel            ; 若（A）不等于0，转移；否则执行本指令的下一条指令（jump if not zero）</code></pre><h4 id="2-比较不相等指令compare-jump-if-not-equal"><a class="markdownIt-Anchor" href="#2-比较不相等指令compare-jump-if-not-equal"></a> （2）  比较不相等指令（compare jump if not equal）</h4><pre><code>   CJNE A,#data,rel              ;若（A）=data，顺序执行；否则转移                               ; 若（A）＞data，C=0；否则C=1   CJNE A,#direct,rel             ;若（A）=（direct），顺序执行；否则转移   CJNE Rn,#data,rel             ;若（Rn）=data，顺序执行；否则转移   CJNE @Ri, #data,rel           ;若（（Ri））=data，顺序执行；否则转移</code></pre><h4 id="3-减1不为0转移指令decrement-jump-if-not-zero"><a class="markdownIt-Anchor" href="#3-减1不为0转移指令decrement-jump-if-not-zero"></a> （3）  减1不为0转移指令（decrement jump if not zero）</h4><pre><code>   DJNZ Rn, rel                 ;Rn←（Rn）-1                              ;若（Rn）不等于0，则转移，继续循环                              ;若（Rn）=0，则结束循环，程序往下执行   DJNZ direct,rel               ;direct←（direct）-1                              ;若（direct）不等于0，则转移，继续循环                              ;若（direct）=0，则结束循环，程序往下执行</code></pre><h3 id="3-子程序调用与返回指令"><a class="markdownIt-Anchor" href="#3-子程序调用与返回指令"></a> 3、子程序调用与返回指令</h3><p>子程序是程序设计中常用的一种结构，为了缩短程序、节省存储空间，常常把逻辑上相对独立或具有通用意义的某段程序编写成子程序，当某个程序需要引用该子程序时，只需要通过子程序调用指令即可转向子程序。</p><h4 id="1-短调用指令"><a class="markdownIt-Anchor" href="#1-短调用指令"></a> （1）  短调用指令</h4><pre><code>   ACALL addr11</code></pre><h4 id="2-长调用指令"><a class="markdownIt-Anchor" href="#2-长调用指令"></a> （2）  长调用指令</h4><pre><code>   LCALL addr16</code></pre><h4 id="3-返回指令"><a class="markdownIt-Anchor" href="#3-返回指令"></a> （3）  返回指令</h4><pre><code>    RET</code></pre><h4 id="4-中断返回指令"><a class="markdownIt-Anchor" href="#4-中断返回指令"></a> （4）  中断返回指令</h4><pre><code>        RETI  ；专用于中断服务程序返回的指令 ，除了返回断点处执行的主程序外，还清楚=除内部相应的中断状态触发器</code></pre><h3 id="4-空操作指令no-operation"><a class="markdownIt-Anchor" href="#4-空操作指令no-operation"></a> 4、空操作指令(no operation)</h3><pre><code>       NOP                ；PC←（PC）+1       功能是使程序计数器PC加1，在执行时间上消耗12个时钟周期，因此常用NOP指令实现等待或延时。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 单片机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 指令系统 </tag>
+            
+            <tag> 单片机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>逻辑运算与循环类指令</title>
       <link href="/2018/09/25/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E4%B8%8E%E5%BE%AA%E7%8E%AF%E7%B1%BB%E6%8C%87%E4%BB%A4/"/>
       <url>/2018/09/25/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E4%B8%8E%E5%BE%AA%E7%8E%AF%E7%B1%BB%E6%8C%87%E4%BB%A4/</url>

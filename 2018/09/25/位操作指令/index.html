@@ -126,7 +126,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="指令系统,单片机," />
 
 
 
@@ -137,17 +137,18 @@
 
 
 
-<meta name="description" content="没有人天生平凡">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://foxyi.club/tags/index.html">
+<meta name="description" content="位操作指令">
+<meta name="keywords" content="指令系统,单片机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="位操作指令">
+<meta property="og:url" content="http://foxyi.club/2018/09/25/位操作指令/index.html">
 <meta property="og:site_name" content="foxyi">
-<meta property="og:description" content="没有人天生平凡">
+<meta property="og:description" content="位操作指令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-15T09:44:36.631Z">
+<meta property="og:updated_time" content="2018-09-25T12:56:51.966Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="没有人天生平凡">
+<meta name="twitter:title" content="位操作指令">
+<meta name="twitter:description" content="位操作指令">
 
 
 
@@ -177,11 +178,11 @@
 
 
 
-  <link rel="canonical" href="http://foxyi.club/tags/"/>
+  <link rel="canonical" href="http://foxyi.club/2018/09/25/位操作指令/"/>
 
 
 
-  <title>tags | foxyi</title>
+  <title>位操作指令 | foxyi</title>
   
 
 
@@ -340,40 +341,231 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://foxyi.club/2018/09/25/位操作指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="foxyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="foxyi">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 4 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/markdown/" style="font-size: 12px; color: #ccc">markdown</a> <a href="/tags/单片夹/" style="font-size: 12px; color: #ccc">单片夹</a> <a href="/tags/单片机/" style="font-size: 21px; color: #6f6f6f">单片机</a> <a href="/tags/指令系统/" style="font-size: 30px; color: #111">指令系统</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">位操作指令</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T20:31:07+08:00">
+                2018-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/25/位操作指令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/25/位操作指令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="center位操作指令center"><a class="markdownIt-Anchor" href="#center位操作指令center"></a> <center>位操作指令</center></h1>
+<a id="more"></a>
+<h3 id="位操作类指令"><a class="markdownIt-Anchor" href="#位操作类指令"></a> 位操作类指令</h3>
+<p>位操作又称为布尔操作，是以位为单位进行的各种操作。在布尔处理机中，借用进位标志Cy来存放逻辑运算结果，大部分操作都涉及Cy，因此它相当于布尔处理机的“累加器”，称为位累加器，用符号C表示。</p>
+<h4 id="1位传送指令"><a class="markdownIt-Anchor" href="#1位传送指令"></a> （1）	位传送指令</h4>
+<pre><code>MOV C,bit                  ;Cy←（bit）
+MOV bit,C                  ;bit←（Cy）
+这组指令其中的一个操作数必须是进位标志C，另一个可以使位地址（用bit表示）。
+</code></pre>
+<h4 id="2位置位和位清零指令"><a class="markdownIt-Anchor" href="#2位置位和位清零指令"></a> （2）	位置位和位清零指令</h4>
+<pre><code>SETB C                     ;Cy←1
+SETB bit                    ;biT←1
+这两条指令可以实现地址单元与位累加器的置位。
+CLR C                      ; Cy←0
+CLR bit                     ; biT←0
+这两组指令可以实现地址单元与位累加器的清零。
+</code></pre>
+<h4 id="3位逻辑运算指令"><a class="markdownIt-Anchor" href="#3位逻辑运算指令"></a> （3）	位逻辑运算指令</h4>
+<p>① 位逻辑“与”指令<br>
+ANL C,bit                 ;CY←(CY)∧（bit）<br>
+ANL C,/bit                ; CY←(CY)∧（bit）取反<br>
+这两条指令是将CY标志位中的内容与位地址单元的内容或其内容的反码进行逻辑与操作，并将相与的结果再送入到CY的标志位中。<br>
+② 位逻辑“或”指令<br>
+ORL C,bit                 ;CY←(CY)∨（bit）<br>
+ORL C,/bit                ; CY←(CY) ∨（bit）取反<br>
+这两条指令是将CY标志位中的内容与直接位地址的内容或其内容的反码进行逻辑与操作，并将相与的结果再送入到CY的标志位中。、<br>
+③ 位逻辑“非”指令<br>
+CPL C                    ;CY (CY)取反<br>
+CPL bit                   ;bit←(bit)取反</p>
+<h4 id="4位条件转移指令"><a class="markdownIt-Anchor" href="#4位条件转移指令"></a> （4）	位条件转移指令←</h4>
+<p>类比于JZ/JNZ<br>
+① 位累加器Cy状态判断转移指令<br>
+JC rel                     ;若（Cy）=1，转移<br>
+JNC rel                    ；若（Cy）=0，转移<br>
+② 位状态判断转移指令<br>
+JNB bit,rel                   ;若（bit）=0，转移<br>
+JBC bit,rel                   ;若（bit）=1，转移，且bit←<br>
+JB bit,rel                    ; 若（bit）=1，转移<br>
+其中JBC指令除了判断位地址的内容外，还将被测位清零。</p>
+<h3 id="单片机指令集"><a class="markdownIt-Anchor" href="#单片机指令集"></a> 单片机指令集</h3>
+<iframe src="http://www.go-gddq.com/down/2011-07/11071400206467.pdf" width="900" height="1000/">
+</iframe>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/指令系统/" rel="tag"># 指令系统</a>
+          
+            <a href="/tags/单片机/" rel="tag"># 单片机</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true">分享</i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/25/控制转移类指令/" rel="next" title="控制转移类指令">
+                <i class="fa fa-chevron-left"></i> 控制转移类指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    <!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-button -mob-share-open">分享</div>
+<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-theme-slide-right" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey="></script>
+
+<!--MOB SHARE END-->
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -408,8 +600,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -474,6 +675,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#center位操作指令center"><span class="nav-text"> 位操作指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位操作类指令"><span class="nav-text"> 位操作类指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1位传送指令"><span class="nav-text"> （1）	位传送指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2位置位和位清零指令"><span class="nav-text"> （2）	位置位和位清零指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3位逻辑运算指令"><span class="nav-text"> （3）	位逻辑运算指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4位条件转移指令"><span class="nav-text"> （4）	位条件转移指令←</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单片机指令集"><span class="nav-text"> 单片机指令集</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
