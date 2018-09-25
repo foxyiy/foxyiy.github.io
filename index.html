@@ -352,6 +352,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://foxyi.club/2018/09/25/逻辑运算与循环类指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="foxyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="foxyi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/25/逻辑运算与循环类指令/" itemprop="url">逻辑运算与循环类指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T18:20:42+08:00">
+                2018-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/单片机/" itemprop="url" rel="index">
+                    <span itemprop="name">单片机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/25/逻辑运算与循环类指令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/25/逻辑运算与循环类指令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1><span id="逻辑运算与循环类指令"> <center>逻辑运算与循环类指令</center></span></h1>
+<p>逻辑运算和移位指令共有25条，有与、或、异或、求反、左右移位、清零等逻辑操作，有直接、寄存器和寄存器间接寻址方式。这类指令一般不影响程序状态字标志。</p>
+<h2><span id="1循环移位指令"> 1.循环移位指令</span></h2>
+<p>指令形式如下：<br>
+RL A                           ;累加器A中的内容左移一位（rotate left）<br>
+RR A                           ;累加器A中的内容右移一位（rotate right）<br>
+RLC A                          ;累加器A中的内容连同进位位CY左移一位（rotate left carry）<br>
+RRC A                          ;累加器A中的内容连同进位位CY右移一位（rotate right carry）<br>
+例：（A）=27H，则RL A 为 （27H）×2</p>
+<h2><span id="2求反指令complement"> 2.求反指令（Complement）</span></h2>
+<p>指令形式如下：<br>
+CPL A                          ；累加器A中的内容按位取反</p>
+<h2><span id="3清零指令clear"> 3.清零指令（clear）</span></h2>
+<p>指令形式如下：<br>
+CLR A                          ；0→（A），累加器中的内容清零<br>
+CPL A                             ; A→A^    ,累加器中内容取反</p>
+<h2><span id="4逻辑与操作指令and-logic"> 4.逻辑与操作指令（and logic）</span></h2>
+<p>指令形式如下：<br>
+ANL A,Rn                            ;A←(A)∧(Rn)<br>
+ANL A,@Ri                           ; A←(A)∧((Ri))<br>
+ANL A,direct                         ; A←(A)∧(direct)<br>
+ANL A,#data                         ; A←(A)∧data<br>
+ANL direct,A                         ;direct←(direct) ∧(A)<br>
+ANL direct, #data                     ；direct←(direct) ∧data<br>
+运算规则是：相应位“见0为0，全1为1”。<br>
+常用于不关心位“清0”</p>
+<h2><span id="5逻辑或操作指令or-logic"> 5.逻辑或操作指令（OR Logic）</span></h2>
+<p>指令形式如下：<br>
+ORL A,Rn                            ;A←(A) ∨(Rn)<br>
+ORL A,@Ri                           ; A←(A) ∨((Ri))<br>
+ORL A,direct                         ; A←(A) ∨(direct)<br>
+ORL A,#data                         ; A←(A) ∨data<br>
+ORL direct,A                         ;direct←(direct) ∨(A)<br>
+ORL direct, #data                     ；direct←(direct) ∨data<br>
+运算规则是：相应位“见1为1，全0为0”。<br>
+常用于某些关心位“置1“</p>
+<h2><span id="6逻辑异或操作指令exclusive-or-logic"> 6.逻辑异或操作指令（exclusive-or logic）</span></h2>
+<p>指令形式如下：<br>
+XRL A,Rn                            ;A←(A)   (Rn)<br>
+XRL A,@Ri                           ; A←(A)   ((Ri))<br>
+XRL A,direct                         ; A←(A)   (direct)<br>
+XRL A,#data                         ; A←(A)   data<br>
+XRL direct,A                         ;direct←(direct)   (A)<br>
+XRL direct, #data                     ；direct←(direct)   data<br>
+运算规则是：对应位“相同为0，不同为1”<br>
+用于关心位取反<br>
+想给某位清零，可使之与“0”相与；想给某位置1，可使之与“1”相或；想对某位求反，可使之与1相异或。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://foxyi.club/2018/09/25/算数运算类指令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1014,7 +1212,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
