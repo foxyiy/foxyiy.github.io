@@ -98,6 +98,15 @@
   
     
     <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<p><font size="12" color="red">请注意</font><br><br><font size="4" color="red">我不生产文章，我只是文章的搬运工</font></p>]]></content>
+      
+    </entry>
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
