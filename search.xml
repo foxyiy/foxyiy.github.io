@@ -7,7 +7,7 @@
       <link href="/2018/10/01/pandas%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
       <url>/2018/10/01/pandas%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
       
-        <content type="html"><![CDATA[<h1 id="centerpandas的简单使用center"><a class="markdownIt-Anchor" href="#centerpandas的简单使用center"></a> <center>pandas的简单使用</center></h1><a id="more"></a><p>为什么突然看pandas呢,当然不是因为突然所以才看，昨天班长来我这弄个excel 表格，最后竟然把一个表格中的容抄在另一个中，因为是同一个文件，两个人填不同的内容，但无奈我excel实在是太菜了，顿时想到无所不能的Python，Google了一下，发现简单的合并表格五行代码就搞定了。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1 = pd.read_csv(<span class="string">"1.csv"</span>)</span><br><span class="line">df2 = pd.read_csv(<span class="string">"2.csv"</span>)</span><br><span class="line">df3 = df1.merge(df2,how=<span class="string">"outer"</span>)<span class="comment">#合并两个表格，pandas支持很合并的方式简直让人眼花缭乱。</span></span><br><span class="line">df3.to_csv(<span class="string">"df2.csv"</span>)<span class="comment">#保存合并后的文件，读取保存excel文件也类似，可查阅文档</span></span><br></pre></td></tr></table></figure><p>啰嗦到此为止，搬运都懒得搬运了，直接贴官方文档地址了。这个骗子害我看了好多个10分钟也没系统看完，<br><a href="https://wizardforcel.gitbooks.io/pandas-official-tut-zh/content/10-minutes-to-pandas.html" target="_blank" rel="noopener">10分钟搞定pandas</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="centerpandas的简单使用center"><a class="markdownIt-Anchor" href="#centerpandas的简单使用center"></a> <center>pandas的简单使用</center></h1><a id="more"></a><p>为什么突然看pandas呢,当然不是因为突然所以才看，昨天班长来我这弄个excel 表格，最后竟然把一个表格中的容抄在另一个中，因为是同一个文件，两个人填不同的内容，但无奈我excel实在是太菜了，顿时想到无所不能的Python，Google了一下，发现简单的合并表格五行代码就搞定了。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1 = pd.read_csv(<span class="string">"1.csv"</span>)</span><br><span class="line">df2 = pd.read_csv(<span class="string">"2.csv"</span>)</span><br><span class="line">df3 = df1.merge(df2,how=<span class="string">"outer"</span>)<span class="comment">#合并两个表格，pandas支持很合并的方式简直让人眼花缭乱。</span></span><br><span class="line">df3.to_csv(<span class="string">"df2.csv"</span>)<span class="comment">#保存合并后的文件，读取保存excel文件也类似，可查阅文档</span></span><br></pre></td></tr></table></figure><p>啰嗦到此为止，搬运都懒得搬运了，直接贴官方文档地址了。这个骗子害我看了好多个10分钟也没系统看完，<br><a href="https://wizardforcel.gitbooks.io/pandas-official-tut-zh/content/10-minutes-to-pandas.html" target="_blank" rel="noopener"><font color="red">10分钟搞定pandas</font></a></p>]]></content>
       
       
       <categories>
@@ -198,20 +198,20 @@
   
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    <entry>
       <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
         <content type="html"><![CDATA[<center><font size="24" color="red">我不生产文章，我只是文章的搬运工</font></center>]]></content>
+      
+    </entry>
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
